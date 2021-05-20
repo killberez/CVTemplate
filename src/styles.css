@@ -1,0 +1,165 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* --- Shared styles between sections --- */
+
+p {
+  @apply my-4;
+}
+
+li:not(:last-child) {
+  @apply mb-2;
+}
+
+.body {
+  @apply text-black bg-cv-background;
+}
+
+.cv {
+  @apply container my-0 md:my-8 bg-white mx-auto;
+}
+
+.link {
+  @apply underline text-cv-link hover:no-underline;
+}
+
+.heading {
+  @apply text-3xl font-bold pb-6;
+}
+
+.list * {
+  @apply py-2;
+}
+
+/* --- Top image & avatar section --- */
+
+.image {
+  /* --- Green Image --- */
+
+  background: linear-gradient(0deg, rgba(19, 19, 19, 0.5), rgba(19, 19, 19, 0.5)),
+    url('./images/image-green.jpg') no-repeat bottom;
+
+  /* --- Gray Image --- */
+
+  /* background: linear-gradient(0deg, rgba(19, 19, 19, 0.5), rgba(19, 19, 19, 0.5)),
+    url('./images/image-gray.jpg') no-repeat bottom; */
+
+  /* --- Orange Image --- */
+
+  /* background: linear-gradient(0deg, rgba(19, 19, 19, 0.5), rgba(19, 19, 19, 0.5)),
+    url('./images/image-orange.jpg') no-repeat bottom; */
+
+  background-size: cover;
+  @apply relative h-72;
+}
+
+.image--avatar {
+  @apply flex justify-center transform translate-y-full;
+}
+
+.avatar {
+  @apply w-48 h-48 rounded-full;
+}
+
+/* --- Contacts section --- */
+
+.contacts {
+  @apply py-24 px-12 bg-cv-contacts grid grid-cols-12 gap-5;
+}
+
+.contacts--description {
+  @apply col-start-1 col-end-13 md:col-start-1 md:col-end-8 xl:col-start-2;
+}
+
+.contacts--information {
+  @apply mt-2 md:mt-0 leading-7 col-start-1 col-end-13 md:col-start-9 md:col-end-12 xl:col-end-11;
+}
+
+.contacts--information > * {
+  @apply mb-6;
+}
+
+.contacts--social {
+  @apply flex justify-center col-start-1 col-end-13 mt-4 lg:mt-0 lg:col-start-12 lg:col-end-12 xl:col-end-11 lg:flex-col lg:justify-start xl:items-end lg:order-3;
+}
+
+.name {
+  @apply text-3xl font-bold text-center mt-3 md:mt-0 md:text-left;
+}
+
+.title {
+  @apply text-xl text-cv-title text-center mb-8 md:mb-0 md:mt-1 md:text-left;
+}
+
+.address {
+  @apply pt-2;
+}
+
+.btn {
+  @apply inline-block py-2.5 px-5 uppercase font-bold bg-cv-button hover:bg-cv-button-hover rounded-md text-white;
+}
+
+.icon {
+  @apply cursor-pointer hover:opacity-75 px-2 lg:pb-2 lg:mb-4;
+}
+
+/* --- Experience & Education section --- */
+
+.experience {
+  @apply py-24 px-12 grid grid-cols-12 gap-5;
+}
+
+.experience--body {
+  @apply col-start-1 col-end-13 md:col-start-1 xl:col-start-2 xl:col-end-8;
+}
+
+.experience--sidebar {
+  @apply col-start-1 col-end-13 xl:col-start-8 xl:col-end-12 xl:border-l border-cv-sidebar border-opacity-50 xl:ml-9 xl:pl-16;
+}
+
+.experience--container {
+  @apply mb-8;
+}
+
+.experience--title {
+  @apply text-xl text-cv-experience-title font-bold;
+}
+
+.experience--meta {
+  @apply text-sm text-cv-experience-meta mt-2;
+}
+
+.experience--description {
+  @apply pt-4;
+}
+
+.separator {
+  @apply px-1 text-cv-separator;
+}
+
+.skill {
+  @apply font-bold py-1.5;
+}
+
+/* --- Custom fonts --- */
+
+@layer base {
+  @font-face {
+    font-family: 'Rubik';
+    src: url('fonts/static/Rubik-Regular.woff');
+    font-weight: 400;
+  }
+
+  @font-face {
+    font-family: 'Rubik';
+    src: url('fonts/static/Rubik-Medium.woff');
+    font-weight: 600;
+  }
+}
+
+@media print {
+  .btn {
+    display: none;
+  }
+}

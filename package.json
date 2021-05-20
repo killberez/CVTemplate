@@ -1,0 +1,21 @@
+{
+  "name": "cv",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build:css:production": "cross-env NODE_ENV=production npm run build:css:development",
+    "build:css:development": "tailwindcss build src/styles.css -o public/generated_styles.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "autoprefixer": "^10.2.1",
+    "puppeteer": "^8.0.0",
+    "tailwindcss": "^2.0.2"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3"
+  }
+}
